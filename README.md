@@ -4,14 +4,16 @@ Appropriate and timely information is the need of the hour to keep people aware 
 
 Here we have used Time Series Forecasting technique using LSTM (Long Short Term Memory) Multivariate Model to predict the future values of the number of COVID-19 Cases that might take place in the country India and its states.
 
+The web application for this solution to pandemic forecasting can be seen in [this](https://drive.google.com/open?id=1-4WyJTzlZ0gmh8snkzrYf7cHcLBwR8SV) video.
+
 ### Requirements:
 * Python 3.5 or 3.6+
 * Python-Flask Framework
-* numpy  '1.18.2'
-* pandas  '0.25.3'
-* matplotlib  '3.2.1'
-* scikit-learn  '0.19.1'
-* keras   '2.3.1' - with tensorflow backend
+* numpy  
+* pandas 
+* plotly
+* scikit-learn
+* keras - with tensorflow backend
 
 
 ``` 
@@ -33,6 +35,25 @@ For installing all the required modules, run the given command from the main dir
 ```
 pip install -r requirements.txt
 ```
+### Steps to Run the Code:
+
+Steps to run the web app:
+1.  Go to the directory Team_SocioTechies_Samhar_Code,
+2.  Run the web app,
+```
+python foresee_app.py 
+```
+3.	Copy the http://127.0.0.1:5000/ address to the browser as localhost.
+
+### Steps to train the model and get Predictions:
+1.	Run the train_country_states.py file
+```
+python train_country_states.py
+```
+2.	This calls the main file train.py and training starts for both the country and the states models.
+3.	The predictions after training are stored in /predictions directory.
+4.	These predictions are stored separately for each of the state and the country as Confirmed, Recovered and Deceased cases respectively.
+These changes are reflected on the ForeSee Web App.
 
 ### Data Collection:
 For training the model, the datasets have been taken from two sources.
@@ -45,14 +66,14 @@ The dataset is taken from [Kaggle-COVID-19 Corona Virus India Dataset](https://w
 
 ##### Note: We have modified the dataset according to the requirements for getting best results. 
 
-#### Data Pre-Processing
+### Data Pre-Processing
 
-##### Country India Dataset Pre-Processing
+#### Country India Dataset Pre-Processing
 1. The data collected from COVID19 India Org is divided into three different files containing the number of Total Confirmed, Total Recovered and Total Deceased cases respectively.
 2. The rows with NaN values if any, are dropped and the datasets for training are stored in the directory /country_data.
 3. Then for each of these datasets, corresponding growth factor is calculated for each date.
 
-##### States Dataset Pre-Processing
+#### States Dataset Pre-Processing
 1. The data collected from Kaggle-COVID-19 Corona Virus India Dataset is divided into separate files categorizing the data based on different states. These datasets contain the number of Total Confirmed, Total Recovered and Total Deceased cases for each state.
 2. The rows with NaN values if any, are dropped and the datasets for training are stored in the directory /states_data.
 3. Then for each of these datasets, corresponding growth factor is calculated for each date.
@@ -66,7 +87,7 @@ The dataset comprises of two input variables which are,
 1. The Number of Confirmed Cases
 2. The Growth Factor for each date
 
-##### Growth Factor
+#### Growth Factor
 Growth Factor is defined as the ratio between the number of new cases on one day, and the number of cases the previous day.
 It is calculated by using the given formula,
 ![growth_factor](https://raw.githubusercontent.com/CodensureLetsCode/ForeSee_Covid19_Forecasting/master/images/growth_factor.png)
