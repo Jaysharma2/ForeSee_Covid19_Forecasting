@@ -26,7 +26,6 @@ In response to the urgent need for timely and accurate information on the COVID-
 - [Predictions](#predictions)
 - [Future Additions](#future-additions)
 - [References](#references)
-- [Team Members](#team-members)
 
 ## Overview
 
