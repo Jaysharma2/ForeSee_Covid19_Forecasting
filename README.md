@@ -1,10 +1,9 @@
 # ForeSee Covid19 Forecasting
 
-Appropriate and timely information is the need of the hour to keep people aware of the effect of pandemic COVID-19. To control and prevent the spread of COVID-19 we will develop a system to predict the spread of the disease in future dates. The future predictions in the increase in the number of COVID-19 cases will help the government to take appropriate actions ahead of time.
 
-Here we have used Time Series Forecasting technique using LSTM (Long Short Term Memory) Multivariate Model to predict the future values of the number of COVID-19 Cases that might take place in the country India and its states.
+In response to the urgent need for timely and accurate information on the COVID-19 pandemic, the ForeSee Covid19 Forecasting system has been developed. This tool utilizes Time Series Forecasting techniques to predict the future spread of COVID-19 cases in India and its states. By providing reliable forecasts of case trends, ForeSee aims to support the government in implementing proactive measures to control and prevent the pandemic effectively.
 
-The web application for this solution to pandemic forecasting can be seen in [this](https://drive.google.com/open?id=1-4WyJTzlZ0gmh8snkzrYf7cHcLBwR8SV) video.
+[<img src="/images/ForeSee_dash.png" width="50%">](https://drive.google.com/open?id=1-4WyJTzlZ0gmh8snkzrYf7cHcLBwR8SV "Demonstartion Video")
 
 ### Requirements:
 * Python 3.5 or 3.6+
