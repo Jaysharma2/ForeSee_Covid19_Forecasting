@@ -24,7 +24,7 @@ In response to the urgent need for timely and accurate information on the COVID-
 - [Data Pre-Processing](#data-pre-processing)
 - [Model Creation and Evaluation](#model-creation-and-evaluation)
 - [Predictions](#predictions)
-- [Future Additions](#future-additions)
+- [News Alerts](#news-alerts)
 - [References](#references)
 
 ## Overview
@@ -102,6 +102,11 @@ Data for training the model is sourced from:
 - Rows with NaN values are removed.
 - Growth factors are calculated for each date and stored in the `/country_data` directory.
 
+<p align="center" width="100%">
+<img src="/images/growth_factor.png" width="30%">
+<img src="/images/predictions.png" width="34%">
+</p>
+
 ### States Dataset
 
 - Data is divided into files for each state.
@@ -125,9 +130,25 @@ The forecasting model uses an LSTM Multivariate Time Series Forecasting techniqu
 
 Predictions for future COVID-19 cases are generated for up to 7 days in advance and displayed on the ForeSee Web App. The app provides visualizations of predictions compared to actual case data.
 
-## Future Additions
+<img src="/images/pred_graph.png" width="100%">
 
-Future enhancements will include:
+Actual Number of Confirmed Cases             | Future Predictions made for 25th May 
+:-------------------------------------------:|:-------------------------:
+![](/images/source_data.png)                     |  ![](/images/comparison_pred.png)
+
+## News Alerts
+
+The COVID-19 pandemic has led to a surge in significant events nationwide, including social and political gatherings, distribution of goods, and large-scale migrations. These events can accelerate the spread of the virus by increasing interactions among people. To enhance our forecasting accuracy, it is crucial to incorporate real-time updates from trusted news sources about these events.
+
+Web Scraping: We use Python to efficiently extract news articles related to COVID-19 by scraping data from reputable sites. This is accomplished using libraries such as BeautifulSoup and the requests module. The extracted information, including article titles and timestamps, is stored in a CSV file and integrated into the web application as news updates.
+
+Future Enhancements: To further improve this feature, we plan to incorporate a language model for Natural Language Processing (NLP). This will enable us to classify the context of news articles and better predict how emerging events might impact the spread of COVID-19. Context Classification will help us analyze various types of events, such as:
+
+Violation of lockdown measures
+Social gatherings
+Challenges faced by hospitals
+Market activities
+By incorporating these updates, the ForeSee application will provide more accurate predictions of COVID-19 case trends, enabling earlier detection and more effective prevention strategies.
 
 - **Weather Data:** Incorporating temperature and humidity data to assess impact on disease spread.
 - **Social Data:** Using Twitter data for real-time updates on COVID-19 cases.
@@ -141,4 +162,5 @@ Future enhancements will include:
 - [CSSEGISandData](https://github.com/CSSEGISandData/COVID-19)
 - [Multivariate Time Series Forecasting with LSTMs](https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/)
 - [TensorFlow Time Series Tutorial](https://www.tensorflow.org/tutorials/structured_data/time_series#top_of_page)
+
 
